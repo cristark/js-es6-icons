@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 a {
@@ -25,6 +25,7 @@ header .logo {
 }
 
 .logo h1 {
+  font-family: "Acme", sans-serif;
   font-size: 2.5em;
   padding: 20px;
 }
@@ -53,14 +54,15 @@ main {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   padding: 20px 0;
 }
 
 .container .icon_box {
-  width: calc(100% / 5 - 80px);
+  flex-basis: calc(100% / 5 - 80px);
   border-radius: 10px;
   background-color: #fff;
-  margin: 0 40px;
+  margin: 20px 40px;
   padding: 20px;
   text-transform: uppercase;
   display: flex;

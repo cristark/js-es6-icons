@@ -9,104 +9,128 @@
 
 Utilizzate forEach, map e filter e cercate di strutturare tutto con le funzioni. 
 */
+$(document).ready(() => {
 
-const icons = [
-    {
-    name: 'cat',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'crow',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'dog',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'dove',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'dragon',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'horse',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'hippo',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'fish',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'animal'
-    },
-    {
-    name: 'carrot',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'vegetable'
-    },
-    {
-    name: 'apple-alt',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'vegetable'
-    },
-    {
-    name: 'lemon',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'vegetable'
-    },
-    {
-    name: 'pepper-hot',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'vegetable'
-    },
-    {
-    name: 'user-astronaut',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'user'
-    },
-    {
-    name: 'user-graduate',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'user'
-    },
-    {
-    name: 'user-ninja',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'user'
-    },
-    {
-    name: 'user-secret',
-    family: 'fas',
-    prefix: 'fa-',
-    type: 'user'
-    }
-];
+    const icons = [
+        {
+        name: 'cat',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'crow',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'dog',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'dove',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'dragon',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'horse',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'hippo',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'fish',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'animal'
+        },
+        {
+        name: 'carrot',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'vegetable'
+        },
+        {
+        name: 'apple-alt',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'vegetable'
+        },
+        {
+        name: 'lemon',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'vegetable'
+        },
+        {
+        name: 'pepper-hot',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'vegetable'
+        },
+        {
+        name: 'user-astronaut',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'user'
+        },
+        {
+        name: 'user-graduate',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'user'
+        },
+        {
+        name: 'user-ninja',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'user'
+        },
+        {
+        name: 'user-secret',
+        family: 'fas',
+        prefix: 'fa-',
+        type: 'user'
+        }
+    ];
+    
+    const inconColors = ['blue', 'orange', 'purple'];
+    const iconType = [];
+    // Estrapolo dall'array principale i differenti types per poterli associare al colore
+    icons.forEach(element => {
+        
+        if (!iconType.includes(element.type)) {
+            iconType.push(element.type);
+        }
+    });
 
-const inconColors = ['blue', 'orange', 'purple'];
+    console.log('Types dell\'array principale', iconType);
+
+    // Utilizzo l'array appena creato come indice per associare ad ogni type dell'array principale il suo rispettivo colore, prendendolo dall'array iconColors
+    const coloredIcons = icons.map(element => {
+        const typeIndex = iconType.indexOf(element.type);
+        return {
+            ...element, 
+            color : inconColors[typeIndex]
+        };
+    });
+
+    console.log(coloredIcons);
+
+});
