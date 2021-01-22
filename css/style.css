@@ -12,3 +12,69 @@ body {
 a {
   color: black;
 }
+
+/* | HEADER Section | */
+header {
+  height: 20vh;
+}
+
+header .logo {
+  height: 50%;
+  background-color: #fff;
+  color: #004225;
+}
+
+.logo h1 {
+  font-size: 2.5em;
+  padding: 20px;
+}
+
+header .main_nav {
+  height: 50%;
+  background-color: #004225;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_nav select {
+  margin: 0 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* | MAIN Section | */
+main {
+  height: 80vh;
+  background-color: #c5d8d1;
+}
+
+.container {
+  display: flex;
+  padding: 20px 0;
+}
+
+.container .icon_box {
+  width: calc(100% / 5 - 80px);
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 40px;
+  padding: 20px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_box i {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+/* | FOOTER Section */
+footer {
+  height: 10vh;
+}
