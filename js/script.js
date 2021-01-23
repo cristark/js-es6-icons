@@ -131,7 +131,7 @@ $(document).ready(() => {
         };
     });
 
-    console.log(coloredIcons);
+    console.log('Array completo di colori', coloredIcons);
     
     // Attraverso il template literal creo le icone su doc HTML tramite Js
     coloredIcons.forEach(element => {
@@ -148,13 +148,52 @@ $(document).ready(() => {
 
     });
 
+    const select = $('#filter_opt');
     // Creo categorie nella select in base al tipo di icona, sfruttando l'array creato in precedenza
     iconType.forEach(element => {
-        $('#filter_opt').append(
+        select.append(
             `
-            <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
+            <option value="${element}">${element.toUpperCase()}</option>
             `
         );
     });
+
+    //Creo filtro icone in base a categoria selezionata e lo stampo su doc HTML
+    select.change(function(){
+        //Pulisco HTML
+        $('.container').html('');
+        //Assegno value in base alla scelta dell'option dell'utente
+        const optSelected = $(this).val();
+        console.log(optSelected);
+
+        // Creo array filtrato in base al type degli oggetti
+        const filterIcons = coloredIcons.filter(element => {
+            return element.type == optSelected;
+        });
+
+        console.log(filterIcons);
+        // Condizione per switchare da all a cat specifica
+        let printArr = filterIcons;
+        
+        if (filterIcons.length == 0) {
+            printArr = coloredIcons;
+        }
+
+        // Stampo a schermo l'array filtrato in base a scelta utente
+        printArr.forEach(element => {
+    
+            const {name, family, prefix, color} = element;
+            $('.container').append(
+                `
+                <div class="icon_box">
+                        <i class="${family} ${prefix}${name}" style="color:${color}"></i>
+                        <p>${name}</p>
+                    </div>
+                `
+            );
+    
+        });
+    });
+    
 
 });
