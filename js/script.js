@@ -132,5 +132,29 @@ $(document).ready(() => {
     });
 
     console.log(coloredIcons);
+    
+    // Attraverso il template literal creo le icone su doc HTML tramite Js
+    coloredIcons.forEach(element => {
+
+        const {name, family, prefix, color} = element;
+        $('.container').append(
+            `
+            <div class="icon_box">
+                    <i class="${family} ${prefix}${name}" style="color:${color}"></i>
+                    <p>${name}</p>
+                </div>
+            `
+        );
+
+    });
+
+    // Creo categorie nella select in base al tipo di icona, sfruttando l'array creato in precedenza
+    iconType.forEach(element => {
+        $('#filter_opt').append(
+            `
+            <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
+            `
+        );
+    });
 
 });
