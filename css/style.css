@@ -62,6 +62,7 @@ main {
   flex-basis: calc(100% / 5 - 80px);
   border-radius: 10px;
   background-color: #fff;
+  box-shadow: 2px 2px 5px lightslategray;
   margin: 20px 40px;
   padding: 20px;
   text-transform: uppercase;

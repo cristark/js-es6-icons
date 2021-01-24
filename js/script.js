@@ -122,7 +122,7 @@ $(document).ready(() => {
         type: 'user'
         }
     ];
-    const inconColors = ['blue', 'orange', 'purple'];
+    const inconColors = ['#FCAB64', '#A9E190', '#CE7DA5'];
     
     
     //| Estrapolo dall'array principale i differenti types per poterli associare al colore
